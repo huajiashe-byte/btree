@@ -9,21 +9,27 @@ var broot *BTreeNode
 var M int
 
 func main() {
+
+	// 初始化BTree。M = 3，即每个node可以包含2（M-1）个keys
 	InitBTree(3)
 
 	//Insert(8)
 	//Insert(9)
 
-	for i := 10; i < 30; i++{
+	// 循环插入keys
+	for i := 10; i < 30; i++ {
 		Insert(i)
 	}
 
+	// 输出BTree
 	Show(broot)
 
+	// 搜索树是否包含key
 	broot.Contain(20)
 	broot.Contain(6)
 }
 
+// BTree节点结构体
 type BTreeNode struct {
 	n     int
 	leaf  bool
@@ -31,7 +37,7 @@ type BTreeNode struct {
 	child []*BTreeNode
 }
 
-// New btree
+// 初始化BTree
 func InitBTree(t int) {
 	broot = &BTreeNode{
 		0,
@@ -42,7 +48,7 @@ func InitBTree(t int) {
 	M = 3
 }
 
-// Insert node
+// 插入节点
 func Insert(k int) {
 	var r *BTreeNode
 	r = broot
@@ -65,7 +71,7 @@ func Insert(k int) {
 	}
 }
 
-// Insert key
+// 在节点中插入kye
 func InsertValue(x *BTreeNode, k int) {
 	if x.leaf {
 		i := 0
@@ -90,7 +96,7 @@ func InsertValue(x *BTreeNode, k int) {
 	}
 }
 
-// Search key
+// 搜索BTree
 func Search(x *BTreeNode, key int) *BTreeNode {
 	i := 0
 	if x == nil {
@@ -112,7 +118,7 @@ func Search(x *BTreeNode, key int) *BTreeNode {
 	}
 }
 
-// split the node
+// 节点分裂
 func Split(x *BTreeNode, pos int, y *BTreeNode) {
 	var z *BTreeNode
 	z = &BTreeNode{
@@ -143,7 +149,7 @@ func Split(x *BTreeNode, pos int, y *BTreeNode) {
 	x.n = x.n + 1
 }
 
-// show Node
+// 输出BTree
 func Show(x *BTreeNode) {
 	for i := 0; i < x.n; i++ {
 		fmt.Print(x.keys[i])
@@ -157,7 +163,7 @@ func Show(x *BTreeNode) {
 	}
 }
 
-// Check if present
+// 搜索是否包含key
 func (no *BTreeNode) Contain(k int) {
 	x := Search(broot, k)
 	if x != nil {
