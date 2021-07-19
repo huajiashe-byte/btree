@@ -10,7 +10,7 @@ var M int
 
 func main() {
 
-	// 初始化BTree。M = 3，即每个node可以包含2（M-1）个keys
+	// 初始化BTree。M = 3
 	InitBTree(3)
 
 	//Insert(8)
