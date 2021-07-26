@@ -111,9 +111,6 @@ func split(x int, parent *Node, cursor *Node) {
 		LLeaf.key[i] = cursor.key[i]
 	}
 
-	//for (int i = 0,j=LLeaf->size;i < RLeaf->size; i++,j++) {
-	//	RLeaf->key[i]= cursor->key[j];
-	//}
 	j := LLeaf.size
 	for i := 0; i < RLeaf.size; i++ {
 		RLeaf.key[i] = cursor.key[j]
