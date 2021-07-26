@@ -11,7 +11,6 @@ type Queue interface {
 }
 
 type sliceEntry struct {
-	//element []Element
 	element []*Node
 }
 
