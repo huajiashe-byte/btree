@@ -17,20 +17,6 @@ type Node struct {
 	// friend BPTree
 }
 
-//type BPTree struct {
-//	root *Node
-//}
-
-//func InitRoot(t int) {
-//	root = &Node{
-//		true,
-//		nil,
-//		make([]int, MAX+1),
-//		1,
-//		make([]*Node, MAX+1),
-//	}
-//}
-
 // insert函数负责进行插入
 func insert(x int) {
 	if root == nil {
