@@ -373,7 +373,7 @@ func (s *SkipList) getOneColumn(p *SkipListNode) string {
 
 func main() {
 	s := new(SkipList)
-    s.SkipList()
+        s.SkipList()
 	for i := 0; i < 40; i++ {
 	 	s.put(rand.Intn(100), rand.Intn(100))
 	}
