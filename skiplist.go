@@ -5,7 +5,7 @@
 // 实现跳表数据结构过程讲解
 // http://www.mathcs.emory.edu/~cheung/Courses/253/Syllabus/Map/skip-list-impl.html
 
-// 在实现跳表时，首先定义了调表节点的数据结构
+// 在实现跳表时，首先定义了跳表节点的数据结构
 // skiplit data struct：
 //
 //                 data: key，value 存放k,v键值对
